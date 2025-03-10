@@ -82,7 +82,7 @@ const CyberGame = ({ onComplete }) => {
     setTime(60);
     setMessage(`Round ${round}: Defend your system against ${numThreats} threats!`);
     setShowMessage(true);
-    setTimeout(() => setShowMessage(false), 3000);
+    setTimeout(() => setShowMessage(false), 5000);
   };
 
   const purchaseDefense = (defense) => {
@@ -90,7 +90,7 @@ const CyberGame = ({ onComplete }) => {
     if (defenses.find(d => d.id === defense.id)) {
       setMessage("You already have this defense!");
       setShowMessage(true);
-      setTimeout(() => setShowMessage(false), 2000);
+      setTimeout(() => setShowMessage(false), 4000);
       return;
     }
     
@@ -110,7 +110,7 @@ const CyberGame = ({ onComplete }) => {
           
           setMessage(`${defense.name} countered ${threat.name}! +${threat.impact} points`);
           setShowMessage(true);
-          setTimeout(() => setShowMessage(false), 2000);
+          setTimeout(() => setShowMessage(false), 4000);
         }
       });
       

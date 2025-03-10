@@ -82,7 +82,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>CyberSec Academy</h1>
+        <h1>Cybersecurity Project</h1>
         <p>Learn cybersecurity through interactive challenges</p>
       </header>
       <main>
