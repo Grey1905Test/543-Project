@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import './App.css';
 import Quiz from './components/Quiz';
 import CyberGame from './components/CyberGame';
-import { FaQuestionCircle, FaGamepad, FaChevronLeft } from 'react-icons/fa';
+import PasswordFortress from './components/PasswordFortress';
+import { FaQuestionCircle, FaGamepad, FaLock, FaChevronLeft } from 'react-icons/fa';
 
 function App() {
   const [currentLevel, setCurrentLevel] = useState('home');
@@ -37,6 +38,15 @@ function App() {
               <FaChevronLeft /> Back to Levels
             </button>
             <CyberGame onComplete={() => handleLevelComplete('game')} />
+          </>
+        );
+      case 'password':
+        return (
+          <>
+            <button className="btn-back" onClick={navigateToHome}>
+              <FaChevronLeft /> Back to Levels
+            </button>
+            <PasswordFortress onComplete={() => handleLevelComplete('password')} />
           </>
         );
       default:
@@ -74,6 +84,22 @@ function App() {
                 )}
               </div>
             </div>
+            
+            <div 
+              className="level-card" 
+              onClick={() => setCurrentLevel('password')}
+            >
+              <div className="level-icon">
+                <FaLock />
+              </div>
+              <div className="level-info">
+                <h3>Level 3: Password Fortress</h3>
+                <p>Master the art of creating secure passwords that withstand various attack methods.</p>
+                {completedLevels.includes('password') && (
+                  <span className="level-complete">✓ Completed</span>
+                )}
+              </div>
+            </div>
           </div>
         );
     }
@@ -82,14 +108,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Cybersecurity Project</h1>
-        <p>Learn cybersecurity through interactive challenges</p>
+        <h1>CyberSecurity Project</h1>
+        <p>Learn CyberSecurity with our game based platform!</p>
       </header>
       <main>
         {renderContent()}
       </main>
       <footer className="App-footer">
-        <p>© 2025 Cybersecurity Project</p>
+        <p>543-Cybersecurity Project</p>
       </footer>
     </div>
   );
